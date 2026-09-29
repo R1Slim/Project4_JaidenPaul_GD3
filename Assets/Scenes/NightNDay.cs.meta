@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6a8ede82689b2b84dbb6bfcdc20fd0aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rb2d: {instanceID: 0}
+  - Plr: {fileID: 8626466231162775904, guid: f0b886a2ea90aa744996199b3e94e228, type: 3}
+  - Barrier: {fileID: 1169332814408995042, guid: 7f07f7353253ded43a6f0642d1f08901, type: 3}
+  - PlrSR: {fileID: 2938140390737963474, guid: f0b886a2ea90aa744996199b3e94e228, type: 3}
+  - BarrierSR: {fileID: 2357018028728826306, guid: 7f07f7353253ded43a6f0642d1f08901, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
