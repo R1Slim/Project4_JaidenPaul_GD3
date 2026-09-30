@@ -33,6 +33,8 @@ public class NightNDay : MonoBehaviour
         BarrierSR = BarrierSR.GetComponent<SpriteRenderer>();
         PlrSR.color = Color.yellow;
         BarrierSR.color = Color.blue;
+        
+        ChangeColorBarrier(DayBarrier, NightBarrier);
     }
     
 
@@ -56,9 +58,8 @@ public class NightNDay : MonoBehaviour
         {
             DayBarrier = true;
         }
-
         ChangeColorPLR(DayMode, NightMode);
-        ChangeColorBarrier(DayBarrier, NightBarrier);
+        
 
     }
     void ChangeColorPLR(bool Daymode, bool Nightmode)
@@ -78,42 +79,33 @@ public class NightNDay : MonoBehaviour
     }
     void ChangeColorBarrier(bool Night, bool Day)
     {
-        float passedtime = Time.time;
-        if(passedtime >= 0.5f)
-        {
-            change = true;
-            passedtime = 0f;
-        }
-        if(Night && change)
+       
+        if(Night)
         {
 
             int randomnumber = UnityEngine.Random.Range(5, 11);
             StartCoroutine(NightToDay(randomnumber));
             
         }
-        if (Day && change)
-        {
-            int randomnumber = UnityEngine.Random.Range(5, 11);
-            StartCoroutine(DayToNight(randomnumber));
-            
-
-        }
+        
     }
-    IEnumerator NightToDay(int randomnumber)
+    IEnumerator NightToDay(int rannum)
     {
         
-        yield return new WaitForSeconds(randomnumber);
+        yield return new WaitForSeconds(rannum);
         BarrierSR.color = Color.yellow;
         NightBarrier = false;
         Debug.Log("Daytime");
+        StartCoroutine(DayToNight(UnityEngine.Random.Range(5,11)));
 
     }
-    IEnumerator DayToNight(int randomnumber)
+    IEnumerator DayToNight(int rannum)
     {
-        yield return new WaitForSeconds(randomnumber);
+        yield return new WaitForSeconds(rannum);
         BarrierSR.color = Color.blue;
         DayBarrier = false;
         Debug.Log("Nighttime");
+        StartCoroutine(NightToDay(UnityEngine.Random.Range(5,11)));
 
     }
 
